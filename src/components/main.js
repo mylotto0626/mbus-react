@@ -11,7 +11,7 @@ class main extends Component {
                 <ImageCard/>
                 <ImageFilter/>
                 <ImageItems/>
-                <div className='empty-space'></div>
+                <div className=''></div>
                 <Footer/>
             </div>
         );
