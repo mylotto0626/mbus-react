@@ -35,6 +35,7 @@ class main_nav extends Component {
             </li>
         </ul>
         </nav>
+        <h1>s</h1>
       </div>
     );
   }
