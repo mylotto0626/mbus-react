@@ -5,37 +5,70 @@ class main_nav extends Component {
   render() {
     return (
       <div>
-        <nav className='navbar bg-body-tertiary'>
-        <div id="logo">
-          <a href="#" className="navbar-brand"><img src="/images/logo.png" alt="logo"></img></a>
+        <div className="top-bar">
+          <div className="top-mail">
+            <a href="#">
+              <img src="./images/envelope-fill.svg" alt="메일"></img>
+              <span>info@mbus703.art</span>
+            </a>
+          </div>
+          <div className="top-icons">    
+              <a href="#">
+                <img src="./images/facebook.svg" alt="페북" className="icon-img"></img>
+              </a>
+              <a href="#">
+                <img src="./images/instagram.svg" alt="인스타그램" className="icon-img"></img>
+              </a>
+              <a href="#">
+                <img src="./images/twitter.svg" alt="트위터" className="icon-img"></img>
+              </a>
+              <a href="#">
+                <img src="./images/youtube.svg" alt="유튜브" className="icon-img"></img>
+              </a>
+              <a href="#">
+                <img src="./images/whatsapp.svg" alt="페북" className="icon-img"></img>
+              </a>
+          </div>
         </div>
-        <ul id="nav" className="nav justify-content-end">
+        <nav className="navbar bg-body-tertiary" style={{padding:'50px'}}>
+          <div id="logo">
+            <a href="#" className="navbar-brand">
+              <img src="/images/logo.png" alt="logo"></img>
+            </a>
+          </div>
+          <ul id="main-nav" className="nav justify-content-end">
             <li className="nav-item">
-              <a class="nav-link" href="#!">
+              <a className="nav-link" href="vhttp://localhost:3000">
                 <span>PROJECTS</span>
-                <i className="underline"></i>
               </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href="#!"><span>NFTS</span></a>
+              <a className="nav-link" href="#">
+                <span>NFTS</span>
+              </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href="#!"><span>NEWS</span></a>
+              <a className="nav-link" href="#!">
+                <span>NEWS</span>
+              </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href="#!"><span>ABOUT</span></a>
+              <a className="nav-link" href="#!">
+                <span>ABOUT</span>
+              </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href="#!"><span>CONTENT</span></a>
+              <a className="nav-link" href="http://localhost:3000/contact">
+                <span>CONTENT</span>
+              </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href="#!">
+              <a className="nav-link" href="#!">
                 <img src="./images/searchicon.png" alt="검색"></img>
               </a>
             </li>
-        </ul>
+          </ul>
         </nav>
-        <h1>s</h1>
       </div>
     );
   }
