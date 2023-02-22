@@ -6,11 +6,13 @@ class contact extends Component {
         super(props);
         this.state={
             Name:"",
-            Email:""
+            Email:"",
+            Text:""
         }
         this.NameHandler = this.NameHandler.bind(this);
         this.EmailHandler = this.EmailHandler.bind(this);
-        this.AreaHandler = this.EmailHandler.bind(this);
+        this.AreaHandler = this.AreaHandler.bind(this);
+        this.SubmitHandler=this.SubmitHandler.bind(this);
     }
 
      NameHandler(event){
@@ -29,15 +31,36 @@ class contact extends Component {
 
     AreaHandler(event){
       this.setState({
-        Email:event.target.value
+        Text:event.target.value
     })
     console.log(event.target.value)
     }
+
+    SubmitHandler(event){
+      event.preventDefault()
+      const data={
+        Name:this.state.Name,
+        Email:this.state.Email,
+        Text:this.state.Text
+      }
+      console.log(data); // input 값 받아오기 완료
+      fetch('http://localhost:5000/submit',{ 
+        method:'POST',
+        headers:{
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then((res)=>res.json(data))
+      .then((res)=>console.log(res))
+    }
+    
+
   render() {
     return (
       <div>
          <ContactNav/>
-
+        <div className="contact-main">
         {/* contact 페이지 왼쪽 영역 */}
         <div className="contact-wrap left">
           <div className="contact-title">
@@ -62,14 +85,14 @@ class contact extends Component {
               <li>General Inquiries</li>
             </ul>
           </div>
-          <form className="input-form" method="post">
+          <form id="input-form">
             <div className="mb-3">
               <input
                 type="text"
                 className="form-control"
                 defaultValue={this.state.Name}
                 onChange={this.NameHandler}
-                required='true'
+                required={true}
                 placeholder="Name *"
               ></input>
             </div>
@@ -79,7 +102,7 @@ class contact extends Component {
                 className="form-control"
                 defaultValue={this.state.Email}
                 onChange={this.EmailHandler}
-                required='true'
+                required={true}
                 placeholder="E-mail *"
               ></input>
             </div>
@@ -87,14 +110,14 @@ class contact extends Component {
               <textarea
                 className="form-control"
                 rows="3"
-                required='true'
+                required={true}
+                defaultValue={this.state.Text}
                 onChange={this.AreaHandler}
                 placeholder="Message *"
               ></textarea>
             </div>
           </form>
           <p>
-            <label for="term"></label>
             <input type={"checkbox"}></input>
             &nbsp;
             <span>
@@ -104,7 +127,7 @@ class contact extends Component {
           </p>
           <p>
             <a href="#">
-              <button className="btn btn-primary">Send Message</button>
+              <button className="btn btn-primary" onClick={this.SubmitHandler}>Send Message</button>
             </a>
           </p>
         </div>
@@ -135,7 +158,9 @@ class contact extends Component {
                 style={{ height: "450px", width: "600px" }}
               ></iframe>
             </div>
+            <div></div>
           </div>
+        </div>
         </div>
       </div>
     );

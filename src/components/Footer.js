@@ -19,9 +19,9 @@ class Footer extends Component {
           <hr className="bar"></hr>
         </div>
         <div className="partner-imgs">
-            <img src="./images/footer_partner1.png" className="part-img"></img>
-            <img src="./images/footer_partner2.png" className="part-img"></img>
-            <img src="./images/footer_partner3.png" className="part-img"></img>
+            <img src="./images/footer_partner1.png" className="part-img" alt="."></img>
+            <img src="./images/footer_partner2.png" className="part-img" alt="."></img>
+            <img src="./images/footer_partner3.png" className="part-img" alt="."></img>
         </div>
         <div className="empty-space" style={{ height: "32px" }}></div>
         <div className="empty-space" style={{ height: "32px" }}></div>

@@ -27,7 +27,7 @@ nav 오버레이할 전체 이미지 영역 */
   flex:1 1 auto;
   align-items: center;
   float: left;
-  padding-left: 0;
+  padding-left: 60px;
   margin:0;
 }
 
@@ -50,7 +50,7 @@ nav 오버레이할 전체 이미지 영역 */
   flex:1 1 auto;
   align-items: center;
   float: right;
-  padding-right: 20px;
+  padding-right: 100px;
   margin: 0;
 }
 
@@ -127,17 +127,27 @@ nav 오버레이할 전체 이미지 영역 */
 .card-title {
   position: absolute;
   color: #fff;
+  font-weight: normal;
   text-align: center;
-  top: 75%;
+  top: 78%;
   left: 50%;
   padding: 5px 10px;
   transform: translate(-50%, -50%);
 }
+.card-keyword{
+  color:#ff8800;
+}
 
 /* contact 페이지 영역 */
+.contact-main{
+  padding:70px 0 70px 0;
+  width: 100%;
+  margin-left: 80px;
+}
+
 .contact-wrap {
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 50px;
   position: relative;
 }
 
@@ -152,12 +162,22 @@ nav 오버레이할 전체 이미지 영역 */
   font-weight: bold;
 }
 
+.contact-text p,ul{
+  color : #8b8d94
+}
+
+.office-text p{
+  color : #8b8d94                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+}
+
 .left{
   float:left;
   width: 50%;
+  box-sizing: border-box;
 }
 
 .right{
+  box-sizing: border-box;
   float:right;
   width: 50%;
 }
@@ -173,7 +193,7 @@ nav 오버레이할 전체 이미지 영역 */
 }
 
 #contact-nav li a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
   cursor: pointer;
 }

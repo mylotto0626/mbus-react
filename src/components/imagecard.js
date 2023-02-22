@@ -8,6 +8,7 @@ class imagecard extends Component {
         <img src="./images/slider.jpg" className="card-img" alt="1" />
         <div className="card-img-overlay">
           <MainNav />
+          <button>ACC-SPACE2</button>
         </div>
       </div>
     );
