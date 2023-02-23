@@ -79,7 +79,7 @@ class imageitems extends Component {
               </div>
             </div>
             <div class="img-items">
-              <img src="./images/cardimg9.jpg" class="img" alt="..." />
+              <a href="#"><img src="./images/cardimg9.jpg" class="img" alt="..." /></a>
               <div class="text-div">
               <p className="card-title">
                 <h5>SHOW ROOM</h5>

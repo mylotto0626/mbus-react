@@ -5,10 +5,10 @@ class imagecard extends Component {
   render() {
     return (
       <div className="card" id="nav-div">
-        <img src="./images/slider.jpg" className="card-img" alt="1" />
+        <img src="./images/cardimg1.jpg" className="card-img" alt="1" />
         <div className="card-img-overlay">
           <MainNav />
-          <button>ACC-SPACE2</button>
+          <a href="#"><button className="main-button">ACC-SPACE2</button></a>
         </div>
       </div>
     );

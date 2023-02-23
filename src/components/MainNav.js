@@ -1,10 +1,29 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useRef } from "react";
 
-class main_nav extends Component {
+class main_nav extends Component { 
+  constructor(props){
+    super(props);
+    this.mainRef=React.createRef();
+    this.contactRef=React.createRef
+    this.spanRef=React.createRef()
+    this.spanChange=this.spanChange.bind();
+  }
+
+  spanChange(){
+    if(this.aRef){
+      this.spanRef.current.style='color:#fff'
+    }else if(this.contactRef){
+      this.spanRef.current.style='color:#000'
+    }else{
+      this.spanRef.current.style='color:#fff'
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div className="content-nav">
         <div className="top-bar">
           <div className="top-mail">
             <a href="#">
@@ -32,14 +51,14 @@ class main_nav extends Component {
         </div>
         <nav className="navbar bg-body-tertiary" style={{padding:'50px'}}>
           <div id="logo">
-            <a href="#" className="navbar-brand">
+            <a href="http://localhost:3000" className="navbar-brand">
               <img src="/images/logo.png" alt="logo"></img>
             </a>
           </div>
           <ul id="main-nav" className="nav justify-content-end">
-            <li className="nav-item">
-              <a className="nav-link" href="vhttp://localhost:3000">
-                <span>PROJECTS</span>
+            <li className="nav-item"  ref={this.aRef}>
+              <a className="nav-link" href="http://localhost:3000">
+                <span ref={this.spanRef}>PROJECTS</span>
               </a>
             </li>
             <li className="nav-item">
@@ -57,9 +76,9 @@ class main_nav extends Component {
                 <span>ABOUT</span>
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" ref={this.contactRef}>
               <a className="nav-link" href="http://localhost:3000/contact">
-                <span>CONTENT</span>
+                <span ref={this.spanRef}>CONTENT</span>
               </a>
             </li>
             <li className="nav-item">

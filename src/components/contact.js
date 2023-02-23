@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import ContactNav from './ContactNav';
+// import ContactNav from './ContactNav';\
+import MainNav,{span} from './MainNav'
+// import contactNav from '../styles/ContactNav.module.css'
 
 class contact extends Component {
     constructor(props){
@@ -7,7 +9,7 @@ class contact extends Component {
         this.state={
             Name:"",
             Email:"",
-            Text:""
+            Text:"",
         }
         this.NameHandler = this.NameHandler.bind(this);
         this.EmailHandler = this.EmailHandler.bind(this);
@@ -49,17 +51,18 @@ class contact extends Component {
         headers:{
           "content-type": "application/json"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data) //json type으로 문자열을 변경
       })
+      // .then((res)=>console.log(res.json(data)))
       .then((res)=>res.json(data))
       .then((res)=>console.log(res))
     }
-    
-
+  
   render() {
+
     return (
       <div>
-         <ContactNav/>
+        <MainNav></MainNav>
         <div className="contact-main">
         {/* contact 페이지 왼쪽 영역 */}
         <div className="contact-wrap left">

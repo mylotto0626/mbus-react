@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
 }
+
+a{
+  text-decoration: none;
+}
+
+/* 페이지 이동해도 nav 따라다니게 하기 */
+/* .transparent-nav>.top-mail a span{
+  color:#000;
+} */
+
 /* 
 nav 오버레이할 전체 이미지 영역 */
 #nav-div {
@@ -12,53 +22,78 @@ nav 오버레이할 전체 이미지 영역 */
   overflow: hidden;
 }
 
+.main-button {
+  background-color: #000000;
+  border-radius: 25px;
+  font-family: Roboto;
+  color: #fff;
+  line-height: 30px;
+  font-weight: bold;
+  height: auto;
+  width: auto;
+  padding: 7px 30px;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+}
+
+.main-button:hover{
+  background-color: #fff;
+  color:#000000;
+}
+
+
 /* 메인 nav 영역*/
-.top-bar{
+/* 메인 아이콘 바 영역 */
+.top-bar {
   margin-top: 10px;
   padding: 0;
   height: 30px;
   display: flex;
-  position: absolute;
+  position: -webkit-sticky;
   width: 100%;
   top: 0;
 }
-.top-bar .top-mail{
+.top-bar .top-mail {
   display: flex;
-  flex:1 1 auto;
+  flex: 1 1 auto;
   align-items: center;
   float: left;
   padding-left: 60px;
-  margin:0;
+  margin: 0;
 }
 
-.top-mail a{
+.top-mail a {
   text-decoration: none;
-  cursor: pointer;
 }
 
-.top-mail a img{
+
+.top-mail a img {
   padding-right: 6px;
 }
 
-.top-mail a span{
-  color:#fff;
+.top-mail a span {
+  color: #fff;
   font-weight: bold;
 }
 
-.top-bar .top-icons{
+.top-bar .top-icons {
   display: flex;
-  flex:1 1 auto;
+  flex: 1 1 auto;
   align-items: center;
   float: right;
   padding-right: 100px;
   margin: 0;
 }
 
-.top-icons .icon-img{
+.top-icons .icon-img {
   padding-left: 5px;
 }
 
-.top-icons:last-child{
+.top-icons:last-child {
   justify-content: flex-end;
 }
 
@@ -67,22 +102,22 @@ nav 오버레이할 전체 이미지 영역 */
   box-sizing: border-box;
 }
 
-#main-nav  li {
+#main-nav li {
   display: flex;
 }
 
-#main-nav  li a {
+#main-nav li a {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
-#main-nav li a:hover{
+#main-nav li a:hover {
   text-decoration: underline;
-  text-underline-offset : 7px;
+  text-underline-offset: 7px;
 }
 
-#main-nav  li a span {
+#main-nav li a span {
   font-weight: bold;
 }
 
@@ -105,17 +140,27 @@ nav 오버레이할 전체 이미지 영역 */
   box-sizing: content-box;
 }
 
-.img-items {
-  position: relative;
+.row {
+  margin-right: calc(2 * var(--bs-gutter-x));
+  margin-left: calc(2 * var(--bs-gutter-x));
 }
 
-.img-items a:hover {
-  background-color: #1ebbf0;
+.img-items {
+  position: relative;
 }
 
 .img-items .img {
   width: 100%;
   vertical-align: middle;
+  opacity: 1;
+  transition-property: opacity;
+}
+
+.img-items .img:hover{
+  background-color:#0069b3;
+  opacity:0.6;
+  background-blend-mode: multiply;
+  transition: opacity .35s ease-out;
 }
 
 .text-div {
@@ -134,13 +179,39 @@ nav 오버레이할 전체 이미지 영역 */
   padding: 5px 10px;
   transform: translate(-50%, -50%);
 }
-.card-keyword{
-  color:#ff8800;
+.card-keyword {
+  color: #ff8800;
 }
 
 /* contact 페이지 영역 */
-.contact-main{
-  padding:70px 0 70px 0;
+
+#contact-nav ul {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+#contact-nav li {
+  display: flex;
+}
+
+#contact-nav li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#contact-nav li a:hover {
+  text-decoration: underline;
+  text-decoration-color:#0069b3;
+  text-underline-offset: 7px;
+}
+
+#contact-nav li a span {
+  font-weight: bold;
+}
+
+.contact-main {
+  padding: 70px 0 70px 0;
   width: 100%;
   margin-left: 80px;
 }
@@ -151,34 +222,35 @@ nav 오버레이할 전체 이미지 영역 */
   position: relative;
 }
 
-.contact-title{
+.contact-title {
   display: inline-block;
-  top:50%;
+  top: 50%;
 }
 
-.contact-title span{
+.contact-title span {
   color: #333333;
   font-size: 24px;
   font-weight: bold;
 }
 
-.contact-text p,ul{
-  color : #8b8d94
+.contact-text p,
+ul {
+  color: #8b8d94;
 }
 
-.office-text p{
-  color : #8b8d94                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+.office-text p {
+  color: #8b8d94;
 }
 
-.left{
-  float:left;
+.left {
+  float: left;
   width: 50%;
   box-sizing: border-box;
 }
 
-.right{
+.right {
   box-sizing: border-box;
-  float:right;
+  float: right;
   width: 50%;
 }
 
@@ -201,29 +273,28 @@ nav 오버레이할 전체 이미지 영역 */
   font-weight: bold;
 }
 
-
 /* 푸터 영역 */
 .empty-space {
   clear: both;
   height: 32px;
 }
 
-.footer-title{
+.footer-title {
   display: flex;
   align-items: center;
 }
 
-.bar{
+.bar {
   flex: auto;
   height: 1px;
-  background-color: #fff;;
+  background-color: #fff;
 }
 
-.footer-title .text{
-  padding:0 17px;
+.footer-title .text {
+  padding: 0 17px;
   font-weight: bold;
   font-size: 24px;
-  color:#0069b3;
+  color: #0069b3;
 }
 
 .container {
@@ -246,13 +317,19 @@ nav 오버레이할 전체 이미지 영역 */
   box-sizing: border-box;
 }
 
-.partner-imgs{
+.partner-imgs {
   margin-top: 20px;
   margin-left: 35px;
 }
 
-.part-img{
+.part-img {
   padding-right: 20px;
   height: 40px;
 }
-
+/* 
+미디어 쿼리 영역 */
+@media all and (max-width:1024px) {
+    *{
+     -webkit-text-size-adjust: 100%;
+    }
+}
