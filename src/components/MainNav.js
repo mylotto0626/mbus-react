@@ -1,30 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, forwardRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useRef } from "react";
 
 class main_nav extends Component { 
-  constructor(props){
-    super(props);
-    this.mainRef=React.createRef();
-    this.contactRef=React.createRef
-    this.spanRef=React.createRef()
-    this.spanChange=this.spanChange.bind();
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state={
+  //     clicked:this.props.clicked,
+  //     color:this.props.color
+  //   }
+  //   this.aClick=this.aClick.bind(this)
+  // }
 
-  spanChange(){
-    if(this.aRef){
-      this.spanRef.current.style='color:#fff'
-    }else if(this.contactRef){
-      this.spanRef.current.style='color:#000'
-    }else{
-      this.spanRef.current.style='color:#fff'
-    }
-  }
+  // aClick(){
+  //  this.props.navHandler(this.state.color)
+  // }
+  // spanChang(ref){
+  //    this.setState({
+  //     clicked:true
+  //    })
+  //   //  return <li className="nav-item" ref={ref} style={{color:'#000'}}></li>
+  //   return(
+  //     document.querySelector('#main-nav li a').ref={ref},
+  //     document.querySelector('#main-nav li a').style.color='#000'
+  //   )
+  // }
 
-  render() {
+
+  render(){
     return (
       <div className="content-nav">
-        <div className="top-bar">
+        <div className="top-bar" >
           <div className="top-mail">
             <a href="#">
               <img src="./images/envelope-fill.svg" alt="메일"></img>
@@ -56,9 +61,9 @@ class main_nav extends Component {
             </a>
           </div>
           <ul id="main-nav" className="nav justify-content-end">
-            <li className="nav-item"  ref={this.aRef}>
+            <li className="nav-item">
               <a className="nav-link" href="http://localhost:3000">
-                <span ref={this.spanRef}>PROJECTS</span>
+                <span>PROJECTS</span>
               </a>
             </li>
             <li className="nav-item">
@@ -76,14 +81,14 @@ class main_nav extends Component {
                 <span>ABOUT</span>
               </a>
             </li>
-            <li className="nav-item" ref={this.contactRef}>
-              <a className="nav-link" href="http://localhost:3000/contact">
-                <span ref={this.spanRef}>CONTENT</span>
+            <li className="nav-item">
+              <a className="nav-link" href="http://localhost:3000/contact" onClick={this.aClick}>
+                <span>CONTENT</span>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#!">
-                <img src="./images/searchicon.png" alt="검색"></img>
+                <img src="./images/search.svg" alt="검색"></img>
               </a>
             </li>
           </ul>
@@ -91,6 +96,6 @@ class main_nav extends Component {
       </div>
     );
   }
-}
+} 
 
 export default main_nav;

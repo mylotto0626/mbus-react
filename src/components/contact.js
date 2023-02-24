@@ -1,20 +1,22 @@
-import React, { Component } from "react";
-// import ContactNav from './ContactNav';\
-import MainNav,{span} from './MainNav'
+import { click } from "@testing-library/user-event/dist/click";
+import React, { Component} from "react";
+import ContactNav from './ContactNav';
 // import contactNav from '../styles/ContactNav.module.css'
 
+//부모컴포넌트
 class contact extends Component {
     constructor(props){
         super(props);
         this.state={
             Name:"",
             Email:"",
-            Text:"",
+            Text:""
         }
         this.NameHandler = this.NameHandler.bind(this);
         this.EmailHandler = this.EmailHandler.bind(this);
         this.AreaHandler = this.AreaHandler.bind(this);
         this.SubmitHandler=this.SubmitHandler.bind(this);
+        // this.navHandler=this.navHandler.bind(this)
     }
 
      NameHandler(event){
@@ -43,7 +45,7 @@ class contact extends Component {
       const data={
         Name:this.state.Name,
         Email:this.state.Email,
-        Text:this.state.Text
+        Text:this.state.Text,
       }
       console.log(data); // input 값 받아오기 완료
       fetch('http://localhost:5000/submit',{ 
@@ -57,12 +59,18 @@ class contact extends Component {
       .then((res)=>res.json(data))
       .then((res)=>console.log(res))
     }
+
+    // navHandler(){
+    //   this.setState({
+    //     clicked:true,
+    //     color:'blue'
+    //   })
+    // }
   
   render() {
-
     return (
       <div>
-        <MainNav></MainNav>
+        <ContactNav/>
         <div className="contact-main">
         {/* contact 페이지 왼쪽 영역 */}
         <div className="contact-wrap left">
